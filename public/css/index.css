@@ -43,9 +43,15 @@ body {
   display: none;
 }
 /* End testing */
-h1 {
-  visibility: hidden;
-  height: 0;
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 h2 {
   font-family: 'Big Shoulders Display', serif;
