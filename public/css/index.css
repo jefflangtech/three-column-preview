@@ -1,0 +1,27 @@
+
+
+/* For testing */
+body {
+  position: relative;
+}
+#mobile-overlay {
+  width: 375px;
+  height: 812px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.45;
+  z-index: 100;
+  display: none;
+}
+#desktop-overlay {
+  width: 1440px;
+  height: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.45;
+  z-index: 100;
+  display: none;
+}
+/* End testing */
