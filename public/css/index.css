@@ -43,7 +43,10 @@ body {
   display: none;
 }
 /* End testing */
-
+h1 {
+  visibility: hidden;
+  height: 0;
+}
 h2 {
   font-family: 'Big Shoulders Display', serif;
   font-weight: 700;
