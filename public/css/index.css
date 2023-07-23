@@ -1,9 +1,27 @@
+/** Design system
+*
+*
+*
+* 
+ */
 
-
-/* For testing */
+:root {
+  --bright-orange: #e38826;
+  --dark-cyan: #006970;
+  --very-dark-cyan: #004241;
+  --white: #fff;
+  --white-75: #ffffffbf, hsl(0, 0%, 75%);
+  --very-light-gray: #f2f2f2;
+}
+html {
+  font-size: 15px;
+}
 body {
   position: relative;
+  font-family: 'Lexend Deca', sans-serif;
 }
+
+/* For testing */
 #mobile-overlay {
   width: 375px;
   height: 812px;
@@ -25,3 +43,31 @@ body {
   display: none;
 }
 /* End testing */
+
+h2 {
+  font-family: 'Big Shoulders Display', serif;
+  font-weight: 700;
+  font-size: 2.67rem;
+  line-height: normal;
+  margin-bottom: 0.625em;
+}
+button {
+  color: inherit;
+  background: none;
+  background-color: var(--very-light-gray);
+  padding-inline: 2.05rem;
+  padding-block: 0.65rem;
+  border: 2px solid var(--very-light-gray);
+  border-radius: 1.6rem;
+  line-height: 1.67em;
+}
+button:hover {
+  background-color: inherit;
+  color: var(--very-light-gray);
+}
+
+
+
+.card-icon {
+  height: 2.67rem;
+}
