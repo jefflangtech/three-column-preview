@@ -10,7 +10,7 @@
   --dark-cyan: #006970;
   --very-dark-cyan: #004241;
   --white: #fff;
-  --white-75: #ffffffbf, hsl(0, 0%, 75%);
+  --white-75: #ffffffbf;
   --very-light-gray: #f2f2f2;
 }
 html {
@@ -19,6 +19,9 @@ html {
 body {
   position: relative;
   font-family: 'Lexend Deca', sans-serif;
+  background-color: var(--very-light-gray);
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* For testing */
@@ -43,6 +46,7 @@ body {
   display: none;
 }
 /* End testing */
+
 .sr-only {
   position: absolute !important;
   width: 1px;
@@ -57,6 +61,7 @@ h2 {
   font-family: 'Big Shoulders Display', serif;
   font-weight: 700;
   font-size: 2.67rem;
+  text-transform: uppercase;
   line-height: normal;
   margin-bottom: 0.625em;
 }
@@ -75,8 +80,54 @@ button:hover {
   color: var(--very-light-gray);
 }
 
-
-
-.card-icon {
+/* Element level rules */
+.component {
+  position: relative;
+  display: block;
+  top: 50%;
+  transform: translateY(-45.5%);
+  width: 61.33rem;
+  height: 33.33rem;
+  overflow: hidden;
+  border-radius: 0.53rem;
+  margin: auto;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+}
+#sedan-card {
+  background-color: var(--bright-orange);
+  color: var(--bright-orange);
+}
+#suvs-card {
+  background-color: var(--dark-cyan);
+  color: var(--dark-cyan);
+}
+#luxury-card {
+  background-color: var(--very-dark-cyan);
+  color: var(--very-dark-cyan);
+}
+.card {
+  padding: 3.2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card .icon {
   height: 2.67rem;
+  font-size: 2.67rem;
+  margin-bottom: 0.875em;
+}
+.card .header {
+  color: var(--white);
+}
+.card .content {
+  color: var(--white-75);
+  line-height: 1.67rem;
+}
+.card button {
+  margin-top: auto;
 }
