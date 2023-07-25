@@ -26,8 +26,10 @@ body {
 
 /* For testing */
 #mobile-overlay {
+  /* To offset the margin-top applied to mobile layout */
+  margin-top: -5.87rem;
   width: 375px;
-  height: 812px;
+  height: 1502px;
   position: absolute;
   top: 0;
   left: 0;
@@ -130,4 +132,31 @@ button:hover {
 }
 .card button {
   margin-top: auto;
+}
+
+@media (max-width: 968px) {
+  .component {
+    position: static;
+    margin-top: 5.87rem;
+    transform: translateY(0%);
+    width: unset;
+    height: unset;
+    max-width: min(48rem, 75vw);
+    min-width: 21.8rem;
+
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    min-height: 26rem;
+  }
+  #footer {
+    height: 5.87rem;
+  }
+}
+@media (max-width: 738px) {
+  .card {
+    min-height: 29.47rem;
+  }
 }
