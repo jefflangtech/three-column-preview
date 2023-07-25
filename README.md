@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI/hub](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI/hub)
+- Solution URL: [https://www.frontendmentor.io/solutions/three-column-preview-card-dPGlXJac1X](https://www.frontendmentor.io/solutions/three-column-preview-card-dPGlXJac1X)
 - Live Site URL: [https://jefflangtech.github.io/three-column-preview/](https://jefflangtech.github.io/three-column-preview/)
 
 ## My process
