@@ -1,8 +1,9 @@
 /** Design system
-*
-*
-*
-* 
+* - Custom variables and document level rules (line 8)
+* - Testing for layout accuracy (line 27)
+* - General classes and rules (line 52)
+* - Element specific rules (line 86)
+* - Media queries (line 139)
  */
 
 :root {
@@ -49,6 +50,7 @@ body {
 }
 /* End testing */
 
+/* General classes and rules */
 .sr-only {
   position: absolute !important;
   width: 1px;
@@ -134,6 +136,7 @@ button:hover {
   margin-top: auto;
 }
 
+/* Media queries */
 @media (max-width: 968px) {
   .component {
     position: static;

@@ -45,72 +45,39 @@ Users should be able to:
 
 ### Step by step
 
-Total time: 9:16
+This is a pretty straight-forward design, nice and simple, but also using a card container kind of layout that is seen frequently. I really wanted to focus on identifying the patterns in the layout and simplifying the CSS rules, even across media queries, and I'm pretty happy with how things turned out. I ended up with 165 lines of CSS, including leaving in the rules for testing purposes and all the organizational comments.
 
-1. Initial setup (0:25)
-2. Design system (0:17)
-3. Notes on the layout (0:34)
+Total time: 5:02
+
+1. Project plan (0:39)
+2. Layout notes (0:49)
+3. Setup design system (1:03)
+4. HTML structure and preliminary validation tests (0:21)
+5. Style desktop layout (1:05)
+6. Style mobile layout & media queries (0:38)
+7. Final updates & readme (0:25)
 
 **Notes**
-It looks like the overall layout of the widget is broken into 3 primary sections, and each one of them can be their own div. Perhaps one is the header, which will contain the request for feedback heading prior to submission, and then the confirmation image after submission. Then a message div, and the rating div.
+In addition to dropping the designs into photoshop and annotating them in my own way, I also decided to create a Google doc to take notes while I was working through the layouts. 
 
-In the request state everything is either left aligned or spaced evenly, and the rating div can be flex. In the thank you state the content is centered.
+![Desktop Layout Notes](./desktop-layout-notes.jpg)
+![Mobile Layout Notes](./mobile-layout-notes.jpg)
 
-For mobile everything is sized down a little bit but the overall layout stays the same so it should be really straight-forward to make this work.
-
-![Layout Notes](public/images/layout-notes.png)
-
-The star and the rating selectors, 1-5, exist inside the same type of circular container. The only difference would be that the rating selectors have a hover state and a selected state. It looks like the 'selected' state is supposed to be grey and the hover state is orange. I think what I might do is have an inactive class and an activated class, where the inactive class has a hover state while the activated class does not, and each one of those has the correct corresponding color schemes. Then, on click, its just a class toggle while the rating score itself can be stored elsewhere.
-
-As far as the form itself, I wonder if I just use an existing HTML structure with all the styling removed so that it exists behind the scenes? I think semantically that makes the most sense so I'll probably do radio buttons...yep I'm implementing that with a submit input as well.
-
-Let's see if any of this backfires later 😂
-
-4. Basic layout with styles (1:20)
-  - Planning this all out in advance worked so well. Also using an image overlay of the design as a layer to compare against (I just turned it off and on using a visibility rule) was critical to getting close to pixel perfect
-5. Create form and styles (0:33)
-6. Program form functionality (3:34)
-7. Program form response content creation (2:37)
-8. Responsive media queries (0:18)
-9. Validation checks & readme updates (0:36)
-
-
-Some fun little functionality to add a new element to the DOM with some optional attributes
-
-```js
-// Function to create new elements in the dom, with optional attributes
-// and append the new element to a specified parent
-const createNewElement = function(el, parentEl, options={}) {
-
-  const newEl = document.createElement(el);
-
-  let elKeys = Object.keys(options);
-
-  if(elKeys.length > 0) {
-
-    for(let k = 0; k < elKeys.length; k++) {
-      newEl.setAttribute(String(elKeys[k]), String(options[elKeys[k]]));
-    }
-
-  }
-
-  parentEl.appendChild(newEl);
-
-  return newEl;
-
-};
-```
+The challenges I gave myself with this one were as follows (in addition to the CSS minimalism):
+- Code the buttons so they can be dropped onto any background color and will take on the color of the background...technically they don't take on the color of the background but they do inherit the color of the card. The other text content of the card has its own color(s) anyways.
+- Float the mobile version without too many extra rules...I still think there must be a more elegant way of doing it but I'm satisfied.
+- Use a minmax to control the card widths across the views - success!
+- Incorporate ems - used for both the icon and header margins
 
 ### Continued development
 
-I'm getting closer to the point where I'll want to invest some time into a framework. Now that I am understanding how things are running under the hood, so to speak, by learning things the old-fashioned-vanilla-js way, I am much clearer on the value that frameworks provide.
+This was great practice of preparation before coding. The project itself went quickly and that was helpful since I didn't have time to get distracted, or lost on a particularly difficult problem, and then lose my mental momentum. 
 
-I am also tempted to start working on my own framework...just because it would be fun, and I also presume it would be an incredible learning experience.
+The next steps would be: 1. more practice, 2. more practice on more difficult layouts while still maintaining good procedures and achieving good results.
 
 ### Useful resources
 
-- [ChatGPT](https://chat.openai.com/) - I cannot imagine not having access to a code capable LLM now, not for writing code, but for helping me learn and understand
-- [MDN: DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) - MDN is my other resource go-to in conjunction with using ChatGPT
+- [Kevin Powell](https://www.youtube.com/@KevinPowell) - Gotta thank Kevin Powell again for the idea of marking up the design before beginning to code. He said he draws on paper printouts, which does sound nice--I would like to save more trees though--so he was using paint and I found using photoshop works great. The only difficulty is making text notes, which is why I incorporated the google doc alongside this time.
 
 ## Author
 
